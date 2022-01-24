@@ -69,3 +69,16 @@ Podéis ver el código que hemos hecho en el video en el repositorio del curso k
 
 - NO puedes anadir ni quietar elementos a la colleccion
 
+## Enum
+
+enum class
+
+## Sealed class
+
+En este video hablaremos de seales classes, se parece a los enums pero la diferencia fundamental es que cada valor de un enum es una constante y existe una única instancia de ese valor mientras que de las subclases de una sealed class pueden existir multiples instancias, más info aquí
+
+
+Son muy útiles para modelar excepciones como veremos
+
+****
+

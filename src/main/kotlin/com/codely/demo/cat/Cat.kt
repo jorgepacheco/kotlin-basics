@@ -9,15 +9,22 @@ data class Cat(
     val origin: String,
     val vaccinated: Boolean,
     val dewormed: Boolean = true,
+    val color: Color,
     val birthDate: LocalDate,
     val createdAt: LocalDate
 ) {
+
+    enum class Color {
+        BLACK, RED, CINNAMON, BLUE, CREAM, LILAC, FAWN, WHITE
+    }
+
     companion object {
         fun vaccinatedWith(
             id: UUID,
             name: String,
             origin: String,
             birthDate: LocalDate,
+            color: String,
             createdAt: LocalDate
         ) = Cat(
             id = id,
@@ -25,7 +32,8 @@ data class Cat(
             origin = origin,
             vaccinated = true,
             birthDate = birthDate,
-            createdAt = createdAt
+            createdAt = createdAt,
+            color = Color.valueOf(color)
         )
 
         fun notVaccinatedWith(
@@ -33,6 +41,7 @@ data class Cat(
             name: String,
             origin: String,
             birthDate: LocalDate,
+            color: String,
             createdAt: LocalDate
         ) = Cat(
             id = id,
@@ -40,7 +49,8 @@ data class Cat(
             origin = origin,
             vaccinated = false,
             birthDate = birthDate,
-            createdAt = createdAt
+            createdAt = createdAt,
+            color = Color.valueOf(color)
         )
     }
 }

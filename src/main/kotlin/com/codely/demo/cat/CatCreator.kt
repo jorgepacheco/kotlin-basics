@@ -20,8 +20,10 @@ class CatCreator(val reader: Reader, val writer: Writer, val clock: Clock, val r
         val dewormed = reader.read()
         writer.write("When did your cat birth?")
         val birthDate = reader.read()
+        writer.write("What is the color of your cat?")
+        val color = reader.read()
 
-        if (name.isNullOrBlank() || name.isNullOrEmpty() || origin.isNullOrEmpty() || origin.isNullOrBlank() || vaccinated.isNullOrEmpty() || vaccinated.isNullOrBlank() || dewormed.isNullOrEmpty() || dewormed.isNullOrBlank() || birthDate.isNullOrEmpty() || birthDate.isNullOrBlank()) {
+        if (name.isNullOrBlank() || name.isNullOrEmpty() || origin.isNullOrEmpty() || origin.isNullOrBlank() || vaccinated.isNullOrEmpty() || vaccinated.isNullOrBlank() || dewormed.isNullOrEmpty() || dewormed.isNullOrBlank() || birthDate.isNullOrEmpty() || birthDate.isNullOrBlank() || color.isNullOrBlank()) {
             throw IllegalArgumentException()
         }
 
@@ -32,7 +34,8 @@ class CatCreator(val reader: Reader, val writer: Writer, val clock: Clock, val r
             vaccinated = vaccinated.toBoolean(),
             dewormed = dewormed.toBoolean(),
             birthDate = LocalDate.parse(birthDate),
-            createdAt = clock.now()
+            createdAt = clock.now(),
+            color = Cat.Color.valueOf(color)
         )
         repository.save(cat)
         return cat

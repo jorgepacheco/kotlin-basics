@@ -9,6 +9,7 @@ class CatTest {
     private val id = "92efe4c8-fab9-4cb0-82d9-5c75eeca2dc1"
     private val name = "Mandarina"
     private val origin = "Shelter"
+    private val color = "WHITE"
     private val birthDate = "2019-01-01"
     private val fixedDate = LocalDate.of(2021, 8, 31)
 
@@ -19,7 +20,8 @@ class CatTest {
             name = name,
             origin = origin,
             birthDate = LocalDate.parse(birthDate),
-            createdAt = fixedDate
+            createdAt = fixedDate,
+            color = color
         )
         val expectedCat = Cat(
             id = UUID.fromString(id),
@@ -27,8 +29,8 @@ class CatTest {
             origin = origin,
             vaccinated = true,
             birthDate = LocalDate.parse(birthDate),
-            createdAt = fixedDate
-
+            createdAt = fixedDate,
+            color = Cat.Color.WHITE
         )
 
         assertEquals(expectedCat, actualCat)
@@ -42,6 +44,7 @@ class CatTest {
             origin = origin,
             birthDate = LocalDate.parse(birthDate),
             createdAt = fixedDate,
+            color = color
 
             )
         val expectedCat = Cat(
@@ -51,6 +54,7 @@ class CatTest {
             vaccinated = false,
             birthDate = LocalDate.parse(birthDate),
             createdAt = fixedDate,
+            color = Cat.Color.WHITE
         )
 
         assertEquals(expectedCat, actualCat)
