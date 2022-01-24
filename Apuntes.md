@@ -58,3 +58,14 @@ Se trata de declarar un objeto dentro de una clase con la palabra reservada comp
 - LA forma de llamarlos similar a los staticos
 
 - Esta dentro de la clase
+
+
+## Collections 🧠 Utiliza el mejor tipo de colección: InMemory - List y Map mutable e inmutable
+
+A diferencia de Java, en Kotlin los tipos List y Map son inmutables por defecto (más info aquí), en este video vamos a ver cómo utilizarlos y cómo podemos usar listas y mapas mutables
+
+
+Podéis ver el código que hemos hecho en el video en el repositorio del curso kotlin-introduction-course/05-03-list-map
+
+- NO puedes anadir ni quietar elementos a la colleccion
+

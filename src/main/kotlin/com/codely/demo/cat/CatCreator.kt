@@ -6,7 +6,7 @@ import com.codely.demo.shared.Writer
 import java.time.LocalDate
 import java.util.*
 
-class CatCreator(val reader: Reader, val writer: Writer, val clock: Clock) {
+class CatCreator(val reader: Reader, val writer: Writer, val clock: Clock, val repository: CatRepository) {
     fun create(): Cat {
         writer.write("Please enter an id for your cat")
         val id = reader.read()
@@ -25,7 +25,7 @@ class CatCreator(val reader: Reader, val writer: Writer, val clock: Clock) {
             throw IllegalArgumentException()
         }
 
-        return Cat(
+        val cat = Cat(
             id = UUID.fromString(id),
             name = name,
             origin = origin,
@@ -34,5 +34,7 @@ class CatCreator(val reader: Reader, val writer: Writer, val clock: Clock) {
             birthDate = LocalDate.parse(birthDate),
             createdAt = clock.now()
         )
+        repository.save(cat)
+        return cat
     }
 }
