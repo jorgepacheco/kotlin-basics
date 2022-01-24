@@ -15,7 +15,15 @@ data class Cat(
 ) {
 
     enum class Color {
-        BLACK, RED, CINNAMON, BLUE, CREAM, LILAC, FAWN, WHITE
+        BLACK, RED, CINNAMON, BLUE, CREAM, LILAC, FAWN, WHITE;
+
+        companion object {
+            fun from(value: String?) = if (value.isNullOrBlank() || value.isNullOrEmpty()) {
+                throw InvalidColor(value)
+            } else {
+                valueOf(value.uppercase())
+            }
+        }
     }
 
     companion object {
