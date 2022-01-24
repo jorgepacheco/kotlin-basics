@@ -36,3 +36,25 @@ class AppTest(reader: Reader, writer: Writer) : App(writer, reader) {
 }
 ```
 
+## Data Class
+
+- Tienen por defecto el equals, hascode, copy, toString
+- No podemos crar Data clasess sin al menos un argumento
+- Uno de los puntos fuertes del lenguaje son las Data Class, se trata de clases que contienen datos y que tienen una serie de restricciones:
+
+  * no pueden ser open
+  * no pueden ser abstract
+  * no pueder ser inner
+  * no puede ser sealed
+  * tiene que tener al menos 1 atributo en el constructor
+
+Además, para este tipo de clases, el compilador ya nos proporciona las funciones: copy, toString, equals/hashCode y componentN(funciones para acceder al valor de cada atributo de la clase)
+
+## Companion objects
+
+Se trata de declarar un objeto dentro de una clase con la palabra reservada companion para que se pueda llamar a sus funciones usando solo el nombre de la clase, pero, como dice el título, 
+¿son métodos estáticos?, esto es lo que hablaremos en el video aunque si quereís un spoiler echad un vistazo aquí
+
+- LA forma de llamarlos similar a los staticos
+
+- Esta dentro de la clase
