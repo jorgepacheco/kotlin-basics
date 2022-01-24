@@ -18,9 +18,15 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("com.diffplug.spotless:spotless-plugin-gradle:5.7.0")
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:6.1.0")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
+
+    testImplementation("org.mockito.kotlin:mockito-kotlin:3.2.0")
+    testImplementation("org.mockito:mockito-inline:3.9.0")
+    testImplementation("org.mockito:mockito-core:3.9.0")
+
+    testImplementation("io.mockk:mockk:1.12.0")
 }
 application {
     mainClass.set("com.codely.demo.CodelyberKt")
